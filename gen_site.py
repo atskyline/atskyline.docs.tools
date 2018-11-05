@@ -15,7 +15,7 @@ config = mkdocs.config.load_config(
     site_url ='http://www.atskyline.com',
     repo_url = 'https://github.com/atskyline/atskyline.docs',
     repo_name = 'GitHub',
-    edit_uri='blob/master/',
+    edit_uri='edit/master/',
     docs_dir = docs_dir,
     site_dir = site_dir
 )
