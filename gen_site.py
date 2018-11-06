@@ -11,7 +11,7 @@ site_name = "朱易辰的个人网站"
 config = mkdocs.config.load_config(
     config_file = open(nav_file_path, "rb"),
     site_name = site_name,
-    theme = 'mkdocs',
+    theme = 'readthedocs',
     site_url ='http://www.atskyline.com',
     repo_url = 'https://github.com/atskyline/atskyline.docs',
     repo_name = 'GitHub',
@@ -21,3 +21,7 @@ config = mkdocs.config.load_config(
 )
 
 mkdocs.commands.build.build(config)
+
+#create CNAME file
+with open(os.path.join(site_dir, "CNAME"), "w") as f:
+    f.write("www.atskyline.com")
