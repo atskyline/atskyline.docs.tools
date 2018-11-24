@@ -1,39 +1,13 @@
 # coding: utf-8
 
-from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
+import mkdocs.commands.serve
 
 
-class StaticServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        root = os.path.abspath(os.path.join(__file__, '../../atskyline.github.io'))
-        # print(self.path)
-        if self.path.endswith('/'):
-            filename = root + self.path + 'index.html'
-        else:
-            filename = root + self.path
+config_file_path = os.path.abspath(os.path.join(__file__, '../config.yml'))
 
-        self.send_response(200)
-        if filename[-4:] == '.css':
-            self.send_header('Content-type', 'text/css')
-        elif filename[-5:] == '.json':
-            self.send_header('Content-type', 'application/javascript')
-        elif filename[-3:] == '.js':
-            self.send_header('Content-type', 'application/javascript')
-        elif filename[-4:] == '.ico':
-            self.send_header('Content-type', 'image/x-icon')
-        else:
-            self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        with open(filename, 'rb') as fh:
-            html = fh.read()
-            #html = bytes(html, 'utf8')
-            self.wfile.write(html)
+mkdocs.commands.serve.serve(
+    config_file = open(config_file_path, "rb"),
+    dev_addr='127.0.0.1:80'
+)
 
-def run(server_class=HTTPServer, handler_class=StaticServer, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print('Starting httpd on port {}'.format(port))
-    httpd.serve_forever()
-
-run()

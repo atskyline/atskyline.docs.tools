@@ -1,0 +1,14 @@
+site_name: '朱易辰的个人网站'
+theme: 'readthedocs'
+docs_dir: '../atskyline.docs'
+site_dir: '../atskyline.github.io'
+
+site_url: 'http://www.atskyline.com'
+repo_url: 'https://github.com/atskyline/atskyline.docs'
+repo_name: 'GitHub'
+edit_uri: 'edit/master/'
+
+nav:
+    - 'AboutMe': 'index.md'
+    - 'nginx源码注解' :
+        - 'nginx源码文件分析' : 'nginx源码注解/nginx源码文件分析.md'
