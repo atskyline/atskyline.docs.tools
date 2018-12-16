@@ -14,3 +14,4 @@ nav:
         - 'nginx源码文件分析' : 'nginx源码注解/nginx源码文件分析.md'
         - 'reopen机制' : 'nginx源码注解/reopen机制.md'
         - 'filter机制' : 'nginx源码注解/filter机制.md'
+        - 'nginx模块管理' : 'nginx源码注解/nginx模块管理.md'
