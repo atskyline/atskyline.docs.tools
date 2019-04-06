@@ -18,3 +18,5 @@ nav:
         - 'server的查找' : 'nginx源码注解/server的查找.md'
         - 'location的查找' : 'nginx源码注解/location的查找.md'
         - 'http模块执行阶段' : 'nginx源码注解/http模块执行阶段.md'
+    - '其他' :
+        - '谈能力提升' : '其他/谈能力提升.md'
